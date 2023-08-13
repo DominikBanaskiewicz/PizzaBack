@@ -56,7 +56,7 @@ const PORT = process.env.PORT || 3001;
 const uriDb = process.env.DB_HOST;
 
 const connection = mongoose.connect(
-  "mongodb+srv://banaskiewiczdominik:A8hZrHeVtRoMtONE@pizzacollection1.hriyurc.mongodb.net/",
+  "",
   {
     useUnifiedTopology: true,
     dbName: "Pizza",
