@@ -47,7 +47,7 @@ const getById = async (req, res, next) => {
       res.status(404).json({
         status: "error",
         code: 404,
-        message: `Not found task id: ${id}`,
+        message: `Not found operation with id: ${id}`,
         data: "Not Found",
       });
     }
@@ -76,8 +76,24 @@ const addOperation = async (req, res, next) => {
   }
 };
 
+const deleteOperation = async (req, res, next) => {
+  const { id } = req.query;
+
+  try {
+    const result = await service.removeOperation(id);
+    res.status(201).json({
+      status: "success",
+      code: 201,
+      data: { removedOperation: result },
+    });
+  } catch (e) {
+    console.error(e);
+  }
+};
+
 module.exports = {
   get,
   getById,
   addOperation,
+  deleteOperation,
 };

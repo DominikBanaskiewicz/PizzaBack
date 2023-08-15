@@ -8,6 +8,11 @@ const pizza = new Schema(
       minlength: 2,
       maxlength: 70,
     },
+    img: {
+      type: String,
+      minlength: 2,
+      maxlength: 70,
+    },
     ingredients: {
       type: Array,
       minlength: 3,

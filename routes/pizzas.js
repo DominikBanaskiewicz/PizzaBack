@@ -6,4 +6,8 @@ router.get("/", ctrlPizzas.get);
 
 router.get("/:id", ctrlPizzas.getById);
 
+router.post("/", ctrlPizzas.addPizza);
+
+router.delete("/:id", ctrlPizzas.removePizza);
+
 module.exports = router;

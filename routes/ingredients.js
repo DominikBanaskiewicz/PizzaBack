@@ -6,4 +6,8 @@ router.get("/", ctrlIngredients.get);
 
 router.get("/:id", ctrlIngredients.getById);
 
+router.post("/", ctrlIngredients.addIngredient);
+
+router.delete("/:id", ctrlIngredients.removeIngredient);
+
 module.exports = router;

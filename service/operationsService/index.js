@@ -29,6 +29,7 @@ const addOperation = (isOperationForPizza, operationType, name) => {
   });
 };
 const removeOperation = (id) => {
+  console.log(id);
   return Operations.findByIdAndRemove({ _id: id });
 };
 

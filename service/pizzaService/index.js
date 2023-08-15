@@ -8,19 +8,17 @@ const getPizzaById = (id) => {
   return Pizza.findOne({ _id: id });
 };
 
-// const createPizza = ({ title, text }) => {
-//   return Pizza.create({ title, text });
-// };
+const createPizza = async (nazwa, skladniki, img) => {
+  return Pizza.create({ name: nazwa, ingredients: skladniki, img: img });
+};
 
-// const updateTask = (id, fields) => {
-//   return Task.findByIdAndUpdate({ _id: id }, fields, { new: true });
-// };
-
-// const removeTask = (id) => {
-//   return Task.findByIdAndRemove({ _id: id });
-// };
+const removePizza = (id) => {
+  return Task.findByIdAndRemove({ _id: id });
+};
 
 module.exports = {
   getAllpizzas,
   getPizzaById,
+  createPizza,
+  removePizza,
 };

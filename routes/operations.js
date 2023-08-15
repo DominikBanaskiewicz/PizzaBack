@@ -8,4 +8,6 @@ router.get("/:id", ctrlOperations.getById);
 
 router.post("/", ctrlOperations.addOperation);
 
+router.delete("/", ctrlOperations.deleteOperation);
+
 module.exports = router;

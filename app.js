@@ -9,7 +9,7 @@ const mongoose = require("mongoose");
 const pizzaRouter = require("./routes/pizzas");
 const ingredientRouter = require("./routes/ingredients");
 const operationRouter = require("./routes/operations");
-
+require("dotenv").config();
 const app = express();
 
 // parse application/json
@@ -55,13 +55,10 @@ app.use((err, _, res, __) => {
 const PORT = process.env.PORT || 3001;
 const uriDb = process.env.DB_HOST;
 
-const connection = mongoose.connect(
-  "",
-  {
-    useUnifiedTopology: true,
-    dbName: "Pizza",
-  }
-);
+const connection = mongoose.connect(uriDb, {
+  useUnifiedTopology: true,
+  dbName: "Pizza",
+});
 console.log(uriDb);
 connection
   .then(() => {

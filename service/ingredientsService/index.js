@@ -8,19 +8,18 @@ const getIngredientById = (id) => {
   return Ingredients.findOne({ _id: id });
 };
 
-// const createPizza = ({ title, text }) => {
-//   return Pizza.create({ title, text });
-// };
+const createIngredient = (name, img) => {
+  console.log(name, img);
+  return Ingredients.create({ name: name, img: img });
+};
 
-// const updateTask = (id, fields) => {
-//   return Task.findByIdAndUpdate({ _id: id }, fields, { new: true });
-// };
-
-// const removeTask = (id) => {
-//   return Task.findByIdAndRemove({ _id: id });
-// };
+const removeIngredient = (id) => {
+  return Ingredients.findByIdAndRemove({ _id: id });
+};
 
 module.exports = {
   getAllingredients,
   getIngredientById,
+  removeIngredient,
+  createIngredient,
 };
